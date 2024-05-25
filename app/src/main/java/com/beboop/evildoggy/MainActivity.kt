@@ -13,6 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.beboop.evildoggy.ui.theme.EvilDoggyTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -22,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    Greeting()
                 }
             }
         }
@@ -30,9 +31,10 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(modifier: Modifier = Modifier) {
+    val game = Game()
     Text(
-        text = "Hello $name!",
+        text = game.printRoles().joinToString(),
         modifier = modifier
     )
 }
@@ -41,6 +43,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     EvilDoggyTheme {
-        Greeting("Android")
+        Greeting()
     }
 }
