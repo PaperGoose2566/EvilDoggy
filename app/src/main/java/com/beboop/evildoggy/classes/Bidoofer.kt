@@ -1,5 +1,5 @@
 package com.beboop.evildoggy.classes
 
-class Bidoofer : Roles() {
+class Bidoofer : Roles {
     override val name: String = "Bidoofer"
 }

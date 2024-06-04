@@ -1,7 +1,5 @@
 package com.beboop.evildoggy.classes
 
-class Werewolf : Roles() {
+class Werewolf : Roles {
     override val name: String = "Werewolf"
-    fun Werewolf() {
-    }
 }

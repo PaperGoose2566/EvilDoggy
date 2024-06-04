@@ -6,13 +6,14 @@ import com.beboop.evildoggy.classes.Roles
 import com.beboop.evildoggy.classes.Werewolf
 
 class Game {
-    private var roles = listOf<Roles>(Werewolf(), Bidoofer(), Badangler())
+    private var roles: MutableList<Roles>
 
     init {
-        roles = roles.shuffled()
+        roles = mutableListOf<Roles>(Werewolf(), Bidoofer(), Badangler())
+        roles.shuffle()
     }
 
-    fun printRoles() : List<Roles> {
+    fun getRoles() : List<Roles> {
         return roles
     }
 }
