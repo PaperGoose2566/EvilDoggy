@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.beboop.evildoggy.ui.theme.EvilDoggyTheme
 import java.util.Random
 
-var usedNums = mutableListOf<Int>()
+var usedNums = mutableListOf<Int>() // This line is really really really stupid but it just works
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,10 +39,8 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-fun randomRole() {
-
-}
-
+// Function that is really dumb and there is a better way
+// but I can't be bothered to try it
 @Composable
 fun DisplayRole(modifier: Modifier = Modifier) {
     // ToDo: remember the role assignment order in a variable
@@ -56,6 +54,7 @@ fun DisplayRole(modifier: Modifier = Modifier) {
         modifier = modifier
     )
     Button(onClick = {
+        // check if the list has been gone through already
         if(bing<game.getRoles().size-1) {
             usedNums.add(idx)
             while(usedNums.contains(idx)) {
